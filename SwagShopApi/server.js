@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 var db = mongoose.connect('mongodb://localhost/swag-shop');
 
-var Product = require('./models/product');// /product is product.js .js is not required here
+var Product = require('./models/product');/*product is product.js .js is not required here*/
 var WishList = require('./models/wishlist');
 
 
@@ -36,6 +36,22 @@ app.post('/product',function(req,res){
         
     });
     
+    
+});
+
+app.get("/product",function(req,res){
+    Product.find({},function(err, productss){
+        if(err){
+            res.status(500).send("Not able to fectch data");
+            
+        }
+        else{
+            res.send(productss);
+        }
+        
+    })
+    
+
     
 });
 
