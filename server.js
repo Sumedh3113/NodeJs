@@ -78,7 +78,11 @@ app.delete('/:ingredientId', function(req,res){
             var ing = ingredients[x];
          
             if(ing.id == req.params.ingredientId){
-                delete ingredients[x];
+                // we can use delete ingredints[x] 
+                //but it will put null inside our array 
+                // that's why use .pop()
+                
+                ingredients.pop();
                 varfound2 = true;
                 break;
             }
