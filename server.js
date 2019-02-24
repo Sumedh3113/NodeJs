@@ -49,12 +49,13 @@ app.put('/:ingredientId', function(req,res){
         res.send({error:"Text should not be empty"});
     }
     else{
+           var varfound = false;
         for (var x=0; x<ingredients.length; x++)
         {
             var ing = ingredients[x];
-            var varfound = false;
-            if(ing.id == req.param.ingredientId){
-                ing.text = newText;
+         
+            if(ing.id == req.params.ingredientId){
+                ingredients[x].text = newText;
                 varfound = true;
                 break;
             }
