@@ -22,6 +22,24 @@ app.listen(3000,function(){
     
 });
 
+app.post('/product',function(req,res){
+   var product = new Product();
+    product.title = req.body.title;
+    product.price = req.body.price;
+    product.save(function(err, savedProduct){
+        if(err){
+            res.status(500).send({error:"Could not save the data"});
+        }
+        else{
+            res.send(savedProduct);
+        }
+        
+    });
+    
+    
+});
+
+
 //var ingredients = [
 //    {"id":"342",
 //    "text": "Hello"
