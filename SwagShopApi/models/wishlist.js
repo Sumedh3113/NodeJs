@@ -9,4 +9,4 @@ var wishList = new Schema({
     
 });
 
-module.export = mongoose.model('WishList', wishList);
+module.exports = mongoose.model('WishList', wishList);
