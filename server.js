@@ -100,7 +100,7 @@ app.delete('/:ingredientId', function(req,res){
     
 });
 
-app.listen(2000,function(){
-    console.log("API Listening on Port 2000");
+app.listen(522,function(){
+    console.log("API Listening on Port 522");
     
 });
