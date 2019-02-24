@@ -28,7 +28,7 @@ app.get('/',function(req,res){
 });
 
 app.post('/',function(req,res){
-   var ingredient = req.body; 
+   var ingredient = req.body.id; 
     if(!ingredient || ingredient.text === ""){
         res.status(500).send({error: "Your ingredient must have text"});
         
@@ -67,6 +67,32 @@ app.put('/:ingredientId', function(req,res){
             res.send(ingredients);
         }
     }
+    
+});
+
+app.delete('/:ingredientId', function(req,res){
+   
+    var varfound2 = false; 
+    for (var x=0; x<ingredients.length; x++)
+        {
+            var ing = ingredients[x];
+         
+            if(ing.id == req.params.ingredientId){
+                delete ingredients[x];
+                varfound2 = true;
+                break;
+            }
+        }
+    if(!varfound2){
+        res.send("ID not found");
+    }
+    else{
+        res.send(ingredients);
+    }
+    
+     
+    
+    
     
 });
 
