@@ -41,6 +41,34 @@ app.post('/',function(req,res){
     
 });
 
+app.put('/:ingredientId', function(req,res){
+    
+    var newText = req.body.text;
+    
+    if(!newText || newText ===''){
+        res.send({error:"Text should not be empty"});
+    }
+    else{
+        for (var x=0; x<ingredients.length; x++)
+        {
+            var ing = ingredients[x];
+            var varfound = false;
+            if(ing.id == req.param.ingredientId){
+                ing.text = newText;
+                varfound = true;
+                break;
+            }
+        }
+        
+        if(!varfound){
+            res.send("Variable not found");
+        }else{
+            res.send(ingredients);
+        }
+    }
+    
+});
+
 app.listen(2000,function(){
     console.log("API Listening on Port 2000");
     
