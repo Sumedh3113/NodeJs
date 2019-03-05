@@ -1,5 +1,14 @@
 var express = require('express');
+// for avoiding cross platform error
+var cors = require('cors');
+
 var app = express();
+
+
+// Then use it before your routes are set up:
+app.use(cors());
+
+
 var bodyP = require('body-parser');
 var mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://localhost/swag-shop');
@@ -14,8 +23,8 @@ app.use(bodyP.json());
 app.use(bodyP.urlencoded({extended: false}));
 
 
-app.listen(3000,function(){
-    console.log("Swag shop API Listening on Port 3000");
+app.listen(3004,function(){
+    console.log("Swag shop API Listening on Port 3004");
     
 });
 
