@@ -17,6 +17,15 @@ var db = mongoose.connect('mongodb://localhost/swag-shop');
 var Product = require('./models/product');/*product is product.js .js is not required here*/
 var WishList = require('./models/wishlist');
 
+/*//Allow all requests from all domains & localhost
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "POST, GET");
+  next();
+});
+*/
+
 
 
 app.use(bodyP.json());
