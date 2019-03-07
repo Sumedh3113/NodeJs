@@ -6,10 +6,11 @@
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+/*  background-color: black;*/
 }
 
 .App-header {
-  background-color: black;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,14 +25,17 @@
 }
 
 .App-main{
-    padding: 5px;
+    padding-top: 5px;
 }
 
 .App-main .product{
+/*
     display: block;
-    margin:auto;
-    margin-bottom:10px;
-    padding: 20px;
+    margin:5px;
+*/
+/*    margin-right: 10px;*/
+/*    margin-bottom:10px;*/
+/*    padding: 20px;*/
 }
 
 @keyframes App-logo-spin {
